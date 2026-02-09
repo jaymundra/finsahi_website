@@ -177,16 +177,16 @@ const Hero = () => {
         >
           <div className="inline-flex items-center space-x-2 bg-white/60 backdrop-blur-md border border-stone-200 rounded-full px-4 py-1.5 shadow-sm mx-auto">
             <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span className="text-xs font-bold text-stone-600 tracking-wide uppercase">Private Wealth Management AI</span>
+            <span className="text-xs font-bold text-stone-600 tracking-wide uppercase">Personal Finance Management AI</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-stone-900 leading-[1.05] tracking-tight drop-shadow-sm">
             India's own AI <br/>
-            <span className="text-stone-600 font-serif italic">Personal Finance Manager.</span>
+            <span className="text-stone-600 font-serif italic">Personal Finance Manager</span>
           </h1>
           
           <p className="text-xl text-stone-700 max-w-2xl mx-auto leading-relaxed font-medium">
-            Finsahi AI combines institutional-grade algorithms with personal finance to manage your wealth, tax, and credit—automatically.
+            Finsahi AI combines institutional-grade algorithms with personal finance to manage your wealth, tax, and credit automatically.
           </p>
           
           <div className="pt-6 flex flex-col items-center">
@@ -206,7 +206,7 @@ const Hero = () => {
               </div>
             </div>
             <div className="text-left">
-              <p className="text-sm font-bold text-stone-900">Join 2,000+ others</p>
+              <p className="text-sm font-bold text-stone-900">Join 100+ others</p>
               <p className="text-xs text-stone-600">on the waitlist this week</p>
             </div>
           </div>
