@@ -175,10 +175,10 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="space-y-8 max-w-3xl"
         >
-          <div className="inline-flex items-center space-x-2 bg-white/60 backdrop-blur-md border border-stone-200 rounded-full px-4 py-1.5 shadow-sm mx-auto">
+          {/* <div className="inline-flex items-center space-x-2 bg-white/60 backdrop-blur-md border border-stone-200 rounded-full px-4 py-1.5 shadow-sm mx-auto">
             <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
             <span className="text-xs font-bold text-stone-600 tracking-wide uppercase">AI Personal Finance Management</span>
-          </div>
+          </div> */}
           
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-stone-900 leading-[1.05] tracking-tight drop-shadow-sm">
             India's own AI <br/>
@@ -186,7 +186,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl text-stone-700 max-w-2xl mx-auto leading-relaxed font-medium">
-            Finsahi AI combines institutional-grade algorithms with personal finance to manage your wealth, tax, and credit automatically.
+            Finsahi AI combines institutional-grade algorithms with personal finance to manage your wealth, tax, insurance, and credit automatically.
           </p>
           
           <div className="pt-6 flex flex-col items-center">
@@ -202,12 +202,12 @@ const Hero = () => {
                 </div>
               ))}
               <div className="w-10 h-10 rounded-full border-2 border-[#FDFCF8] bg-stone-900 text-white flex items-center justify-center text-xs font-bold shadow-sm">
-                +2k
+                +50
               </div>
             </div>
             <div className="text-left">
-              <p className="text-sm font-bold text-stone-900">Join 100+ others</p>
-              <p className="text-xs text-stone-600">on the waitlist this week</p>
+              <p className="text-sm font-bold text-stone-900">Join 50+ others</p>
+              <p className="text-xs text-stone-600">on the waitlist</p>
             </div>
           </div>
         </motion.div>
@@ -242,7 +242,7 @@ const AboutSection = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-12">
             <span className="text-emerald-600 font-bold tracking-widest uppercase text-xs mb-4 block">Our Story</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-stone-900 mb-8 font-serif">From High Frequency Trading to Personal Finance.</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-stone-900 mb-8 font-serif">From High Frequency Trading & Private Equity to Personal Finance</h2>
             
             <div className="space-y-6 text-stone-600 text-lg leading-relaxed text-left md:text-center md:px-12">
               <p>
@@ -262,11 +262,11 @@ const AboutSection = () => {
             <div className="mt-12 flex justify-center items-center space-x-6">
                <div className="flex items-center space-x-2 px-4 py-2 bg-stone-50 rounded-full border border-stone-100">
                  <Briefcase className="w-5 h-5 text-stone-400" />
-                 <span className="text-sm font-bold text-stone-500">Ex-Blackstone</span>
+                 <span className="text-sm font-bold text-stone-500">Ex-Warburg Pincus</span>
                </div>
                <div className="flex items-center space-x-2 px-4 py-2 bg-stone-50 rounded-full border border-stone-100">
                  <TrendingUp className="w-5 h-5 text-stone-400" />
-                 <span className="text-sm font-bold text-stone-500">Ex-Tower Research</span>
+                 <span className="text-sm font-bold text-stone-500">Ex-Quadeye</span>
                </div>
             </div>
         </div>
@@ -293,7 +293,7 @@ const WealthSection = () => {
             
             <div className="mb-8">
               <span className="bg-black text-white text-xs font-bold tracking-widest uppercase px-3 py-1.5">The "Old Way"</span>
-              <h3 className="text-3xl font-serif text-stone-900 mt-4">Rohan's Status Quo</h3>
+              <h3 className="text-3xl font-serif text-stone-900 mt-4">Current Status Quo</h3>
             </div>
 
             <div className="space-y-6">
@@ -541,9 +541,9 @@ const InsuranceSection = () => {
               ))}
             </ul>
 
-            <button className="px-8 py-4 bg-stone-900 text-white font-bold rounded-xl hover:bg-stone-800 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            {/* <button className="px-8 py-4 bg-stone-900 text-white font-bold rounded-xl hover:bg-stone-800 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
               Analyze My Policies
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
@@ -561,7 +561,7 @@ const WaitlistSection = () => {
         <div className="max-w-2xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">Join the waitlist.</h2>
           <p className="text-stone-400 text-lg mb-10">
-            Secure your spot for early access to Finsahi AI. We are onboarding 100 new users every week to ensure the best experience.
+            Secure your spot for early access to Finsahi AI.
           </p>
           
           <div className="flex justify-center">
@@ -618,8 +618,8 @@ const Footer = () => {
         <div className="border-t border-stone-200 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-stone-400 text-sm">© 2026 Finsahi AI Inc. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0 text-sm text-stone-400">
-            <a href="#" className="hover:text-stone-600 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-stone-600 transition-colors">Terms of Service</a>
+            {/* <a href="#" className="hover:text-stone-600 transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-stone-600 transition-colors">Terms of Service</a> */}
           </div>
         </div>
       </div>
