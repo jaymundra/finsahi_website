@@ -177,7 +177,7 @@ const Hero = () => {
         >
           <div className="inline-flex items-center space-x-2 bg-white/60 backdrop-blur-md border border-stone-200 rounded-full px-4 py-1.5 shadow-sm mx-auto">
             <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span className="text-xs font-bold text-stone-600 tracking-wide uppercase">Personal Finance Management AI</span>
+            <span className="text-xs font-bold text-stone-600 tracking-wide uppercase">AI Personal Finance Management</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-stone-900 leading-[1.05] tracking-tight drop-shadow-sm">
