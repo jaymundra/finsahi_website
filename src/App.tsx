@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useInView } from 'motion/react';
 import { 
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, 
   PieChart, Pie, Cell, AreaChart, Area 
@@ -64,10 +64,12 @@ const Navbar = () => {
         </div>
         
         <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-stone-600">
+        <a href="#about" className="hover:text-stone-900 transition-colors">About Us</a>
           <a href="#wealth" className="hover:text-emerald-600 transition-colors">Wealth</a>
           <a href="#tax" className="hover:text-blue-600 transition-colors">Tax</a>
           <a href="#credit" className="hover:text-purple-600 transition-colors">Credit</a>
-          <a href="#about" className="hover:text-stone-900 transition-colors">About Us</a>
+          <a href="#insurance" className="hover:text-green-600 transition-colors">Insurance</a>
+
           <button onClick={() => document.getElementById('waitlist')?.scrollIntoView({behavior: 'smooth'})} className="px-5 py-2 bg-stone-900 text-white rounded-full font-semibold hover:bg-stone-800 transition-colors">
             Join Waitlist
           </button>
@@ -186,7 +188,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl text-stone-700 max-w-2xl mx-auto leading-relaxed font-medium">
-            Finsahi AI combines institutional-grade algorithms with personal finance to manage your wealth, tax, insurance, and credit automatically.
+            Finsahi AI combines institutional-grade algorithms with personal finance to manage your wealth, tax, insurance, and credit.
           </p>
           
           <div className="pt-6 flex flex-col items-center">
@@ -293,7 +295,7 @@ const WealthSection = () => {
             
             <div className="mb-8">
               <span className="bg-black text-white text-xs font-bold tracking-widest uppercase px-3 py-1.5">The "Old Way"</span>
-              <h3 className="text-3xl font-serif text-stone-900 mt-4">Current Status Quo</h3>
+              {/* <h3 className="text-3xl font-serif text-stone-900 mt-4">Current Status Quo</h3> */}
             </div>
 
             <div className="space-y-6">
@@ -309,7 +311,7 @@ const WealthSection = () => {
                   <div className="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center flex-shrink-0 text-stone-500 font-bold text-sm">
                     {item.icon}
                   </div>
-                  <p className="text-stone-500 italic text-sm leading-relaxed">"{item.text}"</p>
+                  <p className="italic text-sm leading-relaxed">"{item.text}"</p>
                 </div>
               ))}
             </div>
@@ -320,8 +322,8 @@ const WealthSection = () => {
             <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
             
             <div className="mb-8 relative z-10">
-              <span className="bg-[#3b82f6] text-white text-xs font-bold tracking-widest uppercase px-3 py-1.5">Finsahi Active Management</span>
-              <h3 className="text-3xl font-serif text-white mt-4">The Finsahi Shift</h3>
+              <span className="bg-[#3b82f6] text-white text-xs font-bold tracking-widest uppercase px-3 py-1.5">The Finsahi Shift</span>
+              {/* <h3 className="text-3xl font-serif text-white mt-4">The Finsahi Shift</h3> */}
             </div>
 
             <div className="grid gap-4 relative z-10">
@@ -332,7 +334,7 @@ const WealthSection = () => {
                     <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400">Cycle Signal</span>
                   </div>
-                  <p className="text-stone-300 text-xs mb-4 leading-relaxed">"Market drawdown of 12% detected. Valuations are at a 2-year low. Shift 20% debt to equity."</p>
+                  <p className="text-white text-xs mb-4 leading-relaxed">"Market drawdown of 12% detected. Valuations are at a 2-year low. Shift 20% debt to equity."</p>
                   <span className="text-[10px] font-bold text-[#3b82f6]">SMART ALPHA: BUY THE DIP</span>
                 </div>
 
@@ -342,7 +344,7 @@ const WealthSection = () => {
                     <div className="w-2 h-2 rounded-full bg-red-500"></div>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400">Mistake Prevented</span>
                   </div>
-                  <p className="text-stone-300 text-xs mb-4 leading-relaxed">"Don't invest this money in fund with lock-in. Your house down payment is due in 60 days"</p>
+                  <p className="text-white text-xs mb-4 leading-relaxed">"Don't invest this money in fund with lock-in. Your house down payment is due in 60 days"</p>
                   <span className="text-[10px] font-bold text-[#3b82f6]">SAFE PLAY: LIQUID ALLOCATION</span>
                 </div>
               </div>
@@ -354,7 +356,7 @@ const WealthSection = () => {
                     <div className="w-2 h-2 rounded-full bg-[#3b82f6]"></div>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400">Tax Optimization</span>
                   </div>
-                  <p className="text-stone-300 text-xs mb-4 leading-relaxed">"Found ₹42,000 in unrealized losses to offset your gains. Sell today and I will remind you to buy tomorrow."</p>
+                  <p className="text-white text-xs mb-4 leading-relaxed">"Found ₹42,000 in unrealized losses to offset your gains. Sell today and I will remind you to buy tomorrow."</p>
                   <span className="text-[10px] font-bold text-[#3b82f6]">ACTION: TAX LOSS HARVESTING</span>
                 </div>
 
@@ -364,7 +366,7 @@ const WealthSection = () => {
                     <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400">Loan Optimization</span>
                   </div>
-                  <p className="text-stone-300 text-xs mb-4 leading-relaxed">"Found a 7.2% rate for your Home Loan. Your current 8.9% is costing you ₹12k extra/month."</p>
+                  <p className="text-white text-xs mb-4 leading-relaxed">"Found a 7.2% rate for your Home Loan. Your current 8.9% is costing you ₹12k extra/month."</p>
                   <span className="text-[10px] font-bold text-[#3b82f6]">ACTION: REFINANCE TRIGGERED</span>
                 </div>
               </div>
@@ -375,7 +377,7 @@ const WealthSection = () => {
                   <div className="w-2 h-2 rounded-full bg-[#3b82f6]"></div>
                   <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400">Dynamic Rebalancing</span>
                 </div>
-                <p className="text-stone-300 text-xs mb-4 leading-relaxed">"Your Portfolio exceeded 70% Equity due to the rally. Rebalance 10% to Debt to protect gains."</p>
+                <p className="text-white text-xs mb-4 leading-relaxed">"Your Portfolio exceeded 70% Equity due to the rally. Rebalance 10% to Debt to protect gains."</p>
                 <span className="text-[10px] font-bold text-[#3b82f6]">STATUS: RISK PARITY MAINTAINED</span>
               </div>
 
@@ -395,7 +397,7 @@ const TaxSection = () => {
           <div className="lg:w-1/2">
             <SectionHeading 
               badge="Tax Optimization"
-              title="Keep more of what you earn."
+              title="Keep more of what you earn"
               subtitle="Our automated systems constantly look for opportunities to save you money on taxes through legal harvesting and smart planning."
             />
             
@@ -406,7 +408,7 @@ const TaxSection = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-stone-900 mb-1">Tax Loss Harvesting</h4>
-                  <p className="text-stone-600 text-sm">We automatically offset gains with losses to lower your taxable income.</p>
+                  <p className="text-stone-600 text-sm">Offset gains with losses when market dips and utilise full LTCG tax benefit.</p>
                 </div>
               </div>
               
@@ -445,13 +447,16 @@ const TaxSection = () => {
 };
 
 const CreditSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { margin: "-100px" });
+
   return (
     <section id="credit" className="py-24 bg-[#FDFCF8]">
       <div className="container mx-auto px-6">
         <SectionHeading 
           align="center"
           badge="Credit Management"
-          title="Master your debt and credit."
+          title="Master your debt and credit"
           subtitle="Don't let interest rates eat your wealth. We aggregate all your loans and cards to find you better rates instantly."
         />
 
@@ -462,10 +467,22 @@ const CreditSection = () => {
                <p className="text-stone-400 text-sm">Updated today</p>
             </div>
             
-            <div className="relative w-48 h-48 mx-auto my-8 flex items-center justify-center">
+            <div ref={ref} className="relative w-48 h-48 mx-auto my-8 flex items-center justify-center">
               <svg className="w-full h-full transform -rotate-90">
                 <circle cx="96" cy="96" r="88" stroke="currentColor" strokeWidth="12" fill="transparent" className="text-stone-800" />
-                <circle cx="96" cy="96" r="88" stroke="currentColor" strokeWidth="12" fill="transparent" strokeDasharray={552} strokeDashoffset={552 - (552 * 0.85)} className="text-[#FDFCF8]" />
+                <motion.circle
+                  cx="96"
+                  cy="96"
+                  r="88"
+                  stroke="currentColor"
+                  strokeWidth="12"
+                  fill="transparent"
+                  strokeDasharray={552}
+                  className="text-[#FDFCF8]"
+                  initial={{ strokeDashoffset: 552 }}
+                  animate={isInView ? { strokeDashoffset: 552 - (552 * 0.85) } : { strokeDashoffset: 552 }}
+                  transition={{ duration: 2, ease: "easeOut", delay: 0.2 }}
+                />
               </svg>
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
                 <span className="text-5xl font-bold text-white">785</span>
@@ -523,7 +540,7 @@ const InsuranceSection = () => {
           <div className="order-1 lg:order-2">
              <SectionHeading 
               badge="Insurance Analysis"
-              title="Protection without the upsell."
+              title="Protection without the upsell"
               subtitle="We audit your existing policies to find gaps or redundancies. No sales agents, just unbiased data-backed advice."
             />
             
@@ -559,9 +576,9 @@ const WaitlistSection = () => {
       
       <div className="container mx-auto px-6 relative z-10 text-center">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">Join the waitlist.</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">Join the waitlist</h2>
           <p className="text-stone-400 text-lg mb-10">
-            Secure your spot for early access to Finsahi AI.
+            Secure your spot for early access to Finsahi AI
           </p>
           
           <div className="flex justify-center">
@@ -581,7 +598,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#FDFCF8] border-t border-stone-200 pt-20 pb-10">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-12 mb-16">
+        <div className="grid md:grid-cols-3 gap-12 mb-16">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
               <div className="w-8 h-8 rounded-lg bg-stone-900 flex items-center justify-center">
@@ -597,14 +614,14 @@ const Footer = () => {
           <div>
             <h4 className="text-stone-900 font-bold mb-6">Offerings</h4>
             <ul className="space-y-4 text-sm text-stone-500">
-              <li><a href="#" className="hover:text-stone-900 transition-colors">Wealth Management</a></li>
-              <li><a href="#" className="hover:text-stone-900 transition-colors">Tax Harvesting</a></li>
-              <li><a href="#" className="hover:text-stone-900 transition-colors">Credit Optimization</a></li>
-              <li><a href="#" className="hover:text-stone-900 transition-colors">Insurance Audit</a></li>
+              <li><a href="#wealth" className="hover:text-stone-900 transition-colors">Wealth Management</a></li>
+              <li><a href="#tax" className="hover:text-stone-900 transition-colors">Tax Harvesting</a></li>
+              <li><a href="#credit" className="hover:text-stone-900 transition-colors">Credit Optimization</a></li>
+              <li><a href="#insurance" className="hover:text-stone-900 transition-colors">Insurance Audit</a></li>
             </ul>
           </div>
 
-          <div>
+          {/* <div>
             <h4 className="text-stone-900 font-bold mb-6">Company</h4>
             <ul className="space-y-4 text-sm text-stone-500">
               <li><a href="#about" className="hover:text-stone-900 transition-colors">About Us</a></li>
@@ -612,7 +629,7 @@ const Footer = () => {
               <li><a href="#" className="hover:text-stone-900 transition-colors">Legal</a></li>
               <li><a href="#" className="hover:text-stone-900 transition-colors">Contact</a></li>
             </ul>
-          </div>
+          </div> */}
         </div>
         
         <div className="border-t border-stone-200 pt-8 flex flex-col md:flex-row justify-between items-center">
