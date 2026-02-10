@@ -242,31 +242,31 @@ const AboutSection = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-12">
             <span className="text-emerald-600 font-bold tracking-widest uppercase text-xs mb-4 block">Our Story</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-stone-900 mb-8 font-serif">From High Frequency Trading & Private Equity to Personal Finance</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-stone-900 mb-8 font-serif">From HFT & PE to Personal Finance Management</h2>
             
             <div className="space-y-6 text-stone-600 text-lg leading-relaxed text-left md:text-center md:px-12">
               <p>
-                We are two IIT Kanpur graduates who spent years in Private Equity and High-Frequency Trading. We were managing millions for institutions, using sophisticated algorithms and data strategies.
+                We are two IIT Kanpur graduates who have spent years in Private Equity and High-Frequency Trading. We were managing millions for institutions, using sophisticated algorithms and data strategies.
               </p>
               <p>
                 Yet, our own personal finances were a mess. We had accounts scattered across five apps, missed tax harvesting deadlines, and held inefficient loans.
               </p>
               <p>
-                We realized that the "wealth tech" available to retail investors was just a green or red flag. No real strategy. No holistic view.
+                We realized that the "robo advisory" available to retail investors was just a basic green or red flag. No real strategy. No holistic view.
               </p>
               <p className="font-medium text-stone-900 text-xl">
-                So we quit our jobs to build Finsahi AI—bringing institutional-grade wealth management to your pocket.
+                So we quit our jobs to build Finsahi AI, bringing institutional-grade financial advisory to your pocket.
               </p>
             </div>
 
             <div className="mt-12 flex justify-center items-center space-x-6">
                <div className="flex items-center space-x-2 px-4 py-2 bg-stone-50 rounded-full border border-stone-100">
                  <Briefcase className="w-5 h-5 text-stone-400" />
-                 <span className="text-sm font-bold text-stone-500">Ex-Warburg Pincus</span>
+                 <span className="text-sm font-bold text-stone-500">Ex-Warburg Pincus (A global Private Equity firm)</span>
                </div>
                <div className="flex items-center space-x-2 px-4 py-2 bg-stone-50 rounded-full border border-stone-100">
-                 <TrendingUp className="w-5 h-5 text-stone-400" />
-                 <span className="text-sm font-bold text-stone-500">Ex-Quadeye</span>
+                  <Briefcase className="w-5 h-5 text-stone-400" />
+                 <span className="text-sm font-bold text-stone-500">Ex-Quadeye (A global High Frequency Trading firm)</span>
                </div>
             </div>
         </div>
@@ -429,7 +429,7 @@ const TaxSection = () => {
               <div className="absolute bottom-6 left-6 right-6 p-6 bg-white/95 backdrop-blur-md border border-stone-200 rounded-xl shadow-lg">
                 <div className="flex justify-between items-center mb-4">
                   <p className="text-stone-500 text-sm font-medium">Est. Tax Saved YTD</p>
-                  <span className="bg-emerald-100 text-emerald-700 text-xs font-bold px-2 py-1 rounded">+12% vs last year</span>
+                  <span className="bg-emerald-100 text-emerald-700 text-xs font-bold px-2 py-1 rounded">~15% saved on taxes</span>
                 </div>
                 <p className="text-4xl font-serif font-bold text-stone-900 mb-2">₹1,24,000</p>
                 <div className="w-full bg-stone-200 h-2 rounded-full mt-2 overflow-hidden">
